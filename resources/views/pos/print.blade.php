@@ -65,6 +65,10 @@
         .uppercase{
             text-transform: uppercase;
         }
+        .bordered-tb{
+            border-top: 3px dotted #000000;
+            border-bottom: 3px dotted #000000;
+        }
     </style>
 </head>
 <body>
@@ -76,30 +80,29 @@
             <h5 class="text-center" style="margin: 0">+92 999 9999999</h5>
          </div>
         <div class="header">
-           {{--  <p class="text-center"><strong>081-2502481</strong></p>
-            <p class="text-center"><strong>Fatima Jinnah Road Near Bugti Gali Zarghoon Plaza Quetta</strong></strong></p> --}}
+          
             <div class="area-title">
-                <p class="text-center bg-dark">POS Receipt</p>
+                <p class="text-center bordered-tb" style="font-weight:bold">POS Receipt</p>
             </div>
             <table>
                 <tr>
-                    <td width="30%">Bill # </td>
-                    <td width="70%"> {{ $bill->id }}</td>
+                    <td width="20%">B# </td>
+                    <td width="15%"> {{ $bill->id }}</td>
+                    <td width="15%">Date: </td>
+                    <td width="50%"> {{ date("d-m-Y", strtotime($bill->date)) }}</td>
+                </tr> 
+            </table>
+            <table>
+                <tr>
+                    <td width="15%"> Waiter: </td>
+                    <td colspan="3">
+                        {{ $bill->waiter->name }}
+                    </td>
                    
                 </tr>
                 <tr>
-                    <td width="30%">Date: </td>
-                    <td width="70%"> {{ date("d-m-Y", strtotime($bill->date)) }}</td>
-                </tr>
-                <tr>
-                    <td width="30%"> Waiter: </td>
-                    <td width="70%">
-                        {{ $bill->waiter->name }}
-                    </td>
-                </tr>
-                <tr>
-                    <td width="30%"> Table: </td>
-                    <td width="70%">
+                    <td width="15%"> Table: </td>
+                    <td colspan="3">
                         @if($bill->type == "Dine-In")
                         {{ $bill->table->name }}
                         @else
@@ -111,7 +114,7 @@
         </div>
         <div class="content">
             <table>
-                <thead class="bg-dark">
+                <thead class="bordered-tb">
                     <th class="text-left">Item</th>
                     <th>Qty</th>
                     <th>Price</th>
@@ -133,9 +136,9 @@
                                 <td colspan="4" class="uppercase">{{ $item->size->item->name }}</td>
                             </tr>
                             <tr class="bottom-border">
-                                <td>{{ $item->size->title }}</td>
-                                <td class="text-center">{{ $item->qty }}</td>
-                                <td>{{ number_format($item->price, 0) }}</td>
+                                <td>{{ $item->size->title }} |</td>
+                                <td class="text-center">{{ $item->qty }} |</td>
+                                <td>{{ number_format($item->price, 0) }} |</td>
                                 <td class="text-right">{{ number_format($item->amount ,0)}}</td>
                             </tr>
                    @endforeach
@@ -158,18 +161,18 @@
                 </tbody>
             </table>
         </div>
-        <div class="footer">
+        {{-- <div class="footer">
             <hr>
             <h5 class="text-center">Developed by Nexgen Pakistan, Quetta <br> 0331-0070041</h5>
-        </div>
+        </div> --}}
     </div>
 </body>
 
 </html>
 <script src="{{ asset('src/plugins/src/jquery-ui/jquery-ui.min.js') }}"></script>
-<script>
+{{-- <script>
 setTimeout(function() {
     window.print();
     }, 2000);
 
-</script>
+</script> --}}
