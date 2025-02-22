@@ -71,14 +71,14 @@
 					<!-- BEGIN pos-content -->
 					<div class="pos-content">
 						<div class="pos-content-container h-100">
-							<div class="row gx-4">
+							<div class="row g-1">
                                 @foreach ($items as $item)
-                                <div class="col-6 col-xxl-2 col-xl-3 col-lg-4 col-md-3 col-sm-4 pb-4" data-type="{{$item->category->name}}">
+                                <div class="col-6 col-xxl-2 col-xl-3 col-lg-4 col-md-3 col-sm-4 pb-1 pt-1" data-type="{{$item->category->name}}">
 									<a href="#" class="pos-product" data-bs-toggle="modal" data-bs-target="#modalPosItem_{{$item->id}}">
 										<div class="img" style="background-image: url({{ asset($item->img) }})"></div>
 										<div class="info">
 											<div class="title">{{$item->name}}</div>
-											<div class="price">PKR
+											<div class="price" style="font-size: 13px">PKR
                                                 @foreach ($item->sizes as $key => $size)
                                                         {{$key == 0 ? ":" : "|" }}
                                                      {{$size->price}}
