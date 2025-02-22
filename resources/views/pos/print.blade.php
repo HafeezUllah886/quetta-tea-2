@@ -12,7 +12,7 @@
             font-family: "Helvetica";
         }
         .main{
-            width: 80mm;
+            width: 50mm;
             background: #fff;
             overflow: hidden;
             margin: 0px auto;
@@ -72,8 +72,8 @@
         <div style="text-align: center;">
             {{-- <img style="margin:0 auto;height:200px;" src="{{ asset('assets/images/logo.png') }}" alt=""> --}}
             <h2 class="text-center" style="margin: 0">{{projectNameAuth()}}</h2>
-            <h3 class="text-center" style="margin: 0">Hana Bypass Nawan Killi Quetta</h3>
-            <h5 class="text-center" style="margin: 0">+92 331 5656761</h5>
+            <h3 class="text-center" style="margin: 0">Airport Road, Quetta</h3>
+            <h5 class="text-center" style="margin: 0">+92 999 9999999</h5>
          </div>
         <div class="header">
            {{--  <p class="text-center"><strong>081-2502481</strong></p>
@@ -83,18 +83,23 @@
             </div>
             <table>
                 <tr>
-                    <td width="15%">Bill # </td>
-                    <td width="35%"> {{ $bill->id }}</td>
-                    <td width="15%">Date: </td>
-                    <td width="35%"> {{ date("d-m-Y", strtotime($bill->date)) }}</td>
+                    <td width="30%">Bill # </td>
+                    <td width="70%"> {{ $bill->id }}</td>
+                   
                 </tr>
                 <tr>
-                    <td width="15%"> Waiter: </td>
-                    <td width="35%">
+                    <td width="30%">Date: </td>
+                    <td width="70%"> {{ date("d-m-Y", strtotime($bill->date)) }}</td>
+                </tr>
+                <tr>
+                    <td width="30%"> Waiter: </td>
+                    <td width="70%">
                         {{ $bill->waiter->name }}
                     </td>
-                    <td width="15%"> Table: </td>
-                    <td width="35%">
+                </tr>
+                <tr>
+                    <td width="30%"> Table: </td>
+                    <td width="70%">
                         @if($bill->type == "Dine-In")
                         {{ $bill->table->name }}
                         @else
@@ -107,7 +112,7 @@
         <div class="content">
             <table>
                 <thead class="bg-dark">
-                    <th class="text-left">Description</th>
+                    <th class="text-left">Item</th>
                     <th>Qty</th>
                     <th>Price</th>
                     <th>Amount</th>
@@ -125,29 +130,29 @@
                        $qty += $item->qty;
                    @endphp
                             <tr>
-                                <td colspan="4" class="uppercase">{{ $item->size->item->name }} | {{ $item->size->title }}</td>
+                                <td colspan="4" class="uppercase">{{ $item->size->item->name }}</td>
                             </tr>
                             <tr class="bottom-border">
-                                <td></td>
+                                <td>{{ $item->size->title }}</td>
                                 <td class="text-center">{{ $item->qty }}</td>
-                                <td>{{ number_format($item->price, 2) }}</td>
-                                <td class="text-right">{{ number_format($item->amount ,2)}}</td>
+                                <td>{{ number_format($item->price, 0) }}</td>
+                                <td class="text-right">{{ number_format($item->amount ,0)}}</td>
                             </tr>
                    @endforeach
                    <tr>
                     <td colspan="3">
-                        Item(s) = {{ $items }} |
-                        Total Quantity = {{ $qty }}
+                        Item(s): {{ $items }} |
+                        Qty: {{ $qty }}
                     </td>
-                    <td class="text-right" style="font-size: 18px"><strong>{{ number_format($total,2) }}</strong></td>
+                    <td class="text-right" style="font-size: 18px"><strong>{{ number_format($total,0) }}</strong></td>
                    </tr>
                    <tr>
                     <td colspan="3" class="text-right"> <strong>Discount</strong></td>
-                    <td class="text-right" style="font-size: 18px"> <strong>{{number_format($bill->discount,2)}}</strong> </td>
+                    <td class="text-right" style="font-size: 18px"> <strong>{{number_format($bill->discount,0)}}</strong> </td>
                    </tr>
                    <tr>
                     <td colspan="3" class="text-right"> <strong>Payable</strong></td>
-                    <td class="text-right" style="font-size: 18px"> <strong>{{number_format($total - $bill->discount,2)}}</strong> </td>
+                    <td class="text-right" style="font-size: 18px"> <strong>{{number_format($total - $bill->discount,0)}}</strong> </td>
                    </tr>
 
                 </tbody>

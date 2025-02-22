@@ -73,7 +73,7 @@
 						<div class="pos-content-container h-100">
 							<div class="row gx-4">
                                 @foreach ($items as $item)
-                                <div class="col-xxl-2 col-xl-3 col-lg-4 col-md-3 col-sm-4 pb-4" data-type="{{$item->category->name}}">
+                                <div class="col-6 col-xxl-2 col-xl-3 col-lg-4 col-md-3 col-sm-4 pb-4" data-type="{{$item->category->name}}">
 									<a href="#" class="pos-product" data-bs-toggle="modal" data-bs-target="#modalPosItem_{{$item->id}}">
 										<div class="img" style="background-image: url({{ asset($item->img) }})"></div>
 										<div class="info">
