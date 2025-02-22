@@ -137,7 +137,7 @@
                             </tr>
                             <tr class="bottom-border">
                                 <td>{{ $item->size->title }} |</td>
-                                <td class="text-center">{{ $item->qty }} |</td>
+                                <td>{{ $item->qty }} |</td>
                                 <td>{{ number_format($item->price, 0) }} |</td>
                                 <td class="text-right">{{ number_format($item->amount ,0)}}</td>
                             </tr>
@@ -170,9 +170,9 @@
 
 </html>
 <script src="{{ asset('src/plugins/src/jquery-ui/jquery-ui.min.js') }}"></script>
-{{-- <script>
+ <script>
 setTimeout(function() {
     window.print();
     }, 2000);
 
-</script> --}}
+</script> 
