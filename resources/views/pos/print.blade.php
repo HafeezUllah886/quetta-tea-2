@@ -73,9 +73,9 @@
 </head>
 <body>
     <div class="main" id="main">
-        <div style="text-align: center;">
+        <div >
             {{-- <img style="margin:0 auto;height:200px;" src="{{ asset('assets/images/logo.png') }}" alt=""> --}}
-            <h2 class="text-center" style="margin: 0">{{projectNameAuth()}}</h2>
+            <h2 class="text-center" style="margin: 1px">{{projectNameAuth()}}</h2>
             <h3 class="text-center" style="margin: 0">Airport Road, Quetta</h3>
             <h5 class="text-center" style="margin: 0">+92 999 9999999</h5>
          </div>
