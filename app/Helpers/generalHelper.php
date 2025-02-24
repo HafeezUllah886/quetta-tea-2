@@ -138,12 +138,12 @@ function calculateGrowthPercentage($oldValue, $newValue) {
 
 function projectNameAuth()
 {
-    return "QUETTA TEA";
+    return "QUETTA T4U";
 }
 
 function projectNameHeader()
 {
-    return "Quetta TEA";
+    return "Quetta T4U";
 }
 function projectNameShort()
 {

@@ -130,7 +130,8 @@ class BillsController extends Controller
         $bill->status = "Completed";
         $bill->save();
 
-        return view('pos.print', compact('bill'));
+            return view('pos.print1', compact('bill'));
+        
     }
 
     /**

@@ -72,8 +72,8 @@
         <div style="text-align: center;">
             {{-- <img style="margin:0 auto;height:200px;" src="{{ asset('assets/images/logo.png') }}" alt=""> --}}
             <h2 class="text-center" style="margin: 0">{{projectNameAuth()}}</h2>
-            <h3 class="text-center" style="margin: 0">Hana Bypass Nawan Killi Quetta</h3>
-            <h5 class="text-center" style="margin: 0">+92 331 5656761</h5>
+            <h3 class="text-center" style="margin: 0">Airport Road, Quetta</h3>
+            <h5 class="text-center" style="margin: 0">+92 123 4567890</h5>
          </div>
         <div class="header">
            {{--  <p class="text-center"><strong>081-2502481</strong></p>
